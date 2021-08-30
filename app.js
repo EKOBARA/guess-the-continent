@@ -29,7 +29,7 @@ form.addEventListener('submit', (event) => {
 			// console.log(res[country]);
             // let go = true;
             // while (go){
-                if (num <= 3){
+                if (num <= 10){
 			        question.innerText = `On what continent is ${res[country].name} located?`;
                     results[res[country].name] = res[country].region;
                     answers.push(input.value);

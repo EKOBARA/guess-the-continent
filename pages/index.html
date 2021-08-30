@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/style.css">
     <title>Globe Guess</title>
 </head>
-<body>
-    <h1>Guess The Continent</h1>
-    <button id="play">PLAY</button>
-    <div class="container">
-        <h3></h3>
-        <h5></h5>
-        <form>
-            <input type="text" placeholder="Answer">
-            <button id="submit">Submit</button>
-        </form>
+<body class="landingpage">
+    <main>
+        <div class="container">
+            <h1 class="title">Guess The Region</h1>
+            <a class="button" href="game.html">Play</a>
+        </div>
+    </main>
 
+    <button class="modal-buttons" id="openModal">About the Game</button>
+    <div id="modal">
+        <div id="modal-textbox">
+            <h1>Learn to Play</h1>
+            <p>Bridge is played with four people sitting at a card table using a standard deck of 52 cards (no jokers). The
+               
+            <div id="modal-footer">
+                <button class="modal-buttons" id="close" href="#">Close</button>
+            </div>
+        </div>
     </div>
-
-
-    <!-- Script File -->
-    <script src="../app.js"></script>
+    
+    <!-- JavaScript Link -->
+    <script src="app.js"></script>
 </body>
+
 </html>

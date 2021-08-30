@@ -17,25 +17,6 @@ const question = document.querySelector('h5');
 
 let num = 1;
 
-play.addEventListener('click', (event) => {
-    event.preventDefault();
-    // console.log(event);
-    const url = 'https://restcountries.eu/rest/v2/all';
-    fetch(url)
-    .then(res => res.json())
-    .then(res => {
-        
-        let country = Math.floor(Math.random()*250);
-        // console.log(res[country]);
-        qNumber.innerText = `On what continent is ${res[country].name} located?`;
-        results[res[country].name] = res[country].region;
-        qNumber.innerText = `Question ${num}`;
-        question.innerText = `On what continent is ${res[country].name} located?`;
-        play.style.display = 'none';
-        // console.log(results)
-    });
-});
-       
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
 	// console.log(event);
@@ -48,7 +29,7 @@ form.addEventListener('submit', (event) => {
 			// console.log(res[country]);
             // let go = true;
             // while (go){
-                if (num <= 10){
+                if (num <= 3){
 			        question.innerText = `On what continent is ${res[country].name} located?`;
                     results[res[country].name] = res[country].region;
                     answers.push(input.value);
@@ -56,12 +37,18 @@ form.addEventListener('submit', (event) => {
                     console.log(answers);
                     input.value = '';
                 } else {
-                    
-                    let li = document.createElement('li');
-                    let span = document.createElement('span');
+
+                    let countriesLi = document.createElement('li');
+                    let regionsLi = document.createElement('li');
+                    let newDiv = document.createElement('div');
 					let button = document.createElement('button');
 
-
+                    newDiv.classList.add('div');
+                    countriesLi.append.innerText(Object.keys(results));
+                    answers.forEach(element => {
+                        regionsLi.append.innerText(element);
+                    }); 
+                        
                     document.body.display = 'none';
 
                     

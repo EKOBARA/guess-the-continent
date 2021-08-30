@@ -1,6 +1,6 @@
 // Keep track of all asked questions and their answers
-const results = [];
-const answers = [];
+const results = []; // Correct answers
+const answers = []; // Player answers
 
 /*----- cached element references -----*/
 const form = document.querySelector('form');
@@ -10,16 +10,14 @@ const question = document.querySelector('h5');
 const section = document.querySelector('section');
 const div = document.querySelector('div');
 
-// const play = document.getElementById('play');
 
-/*----- event listeners -----*/
-
-
-/*----- functions -----*/
 /*----- API -----*/
 const url = 'https://restcountries.eu/rest/v2/all';
 
-let num = 0;
+/*----- functions -----*/
+
+let num = 0; // Count number of questions
+// Begins game with first question 
 function start(){
     fetch(url)
     .then((res) => res.json())
@@ -31,68 +29,53 @@ function start(){
 		answers.push(input.value);
     })
 }
-
+// Loads game once the webpage loads
 start();
 
+// Listens for player input then prompts following questions
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
-	// console.log(event);
 	fetch(url)
     .then((res) => res.json())
     .then((res) => {
+        // Max 10 questions
         if (num != 10){
-                let country = Math.floor(Math.random() * 250);
+            // Selects random cpuntry
+            let country = Math.floor(Math.random() * 250); 
                 qNumber.innerText = `Question ${num+=1}`;
                 question.innerText = `What region is ${res[country].name} located?`;
-            
+
+                // logs correct answer and player answer
                 results.push(res[country].region);
                 answers.push(input.value);
-                console.log(results);
-                console.log(answers);
-                input.value = '';
+                // console.log(results);
+                // console.log(answers);
+                input.value = ''; // Clears input field
         } 
-        else {    
+        else {    // when max questions are given
             answers.push(input.value);
-	        div.style.display = 'none';
+	        div.style.display = 'none'; // Clears browser
 	        section.style.display = 'block';
+
+            // Compares player answer to correct answers 
 	        let score = 0;
 	        for (let i = 0; i < results.length; i++) {
                 if (results[i] === answers[i + 1]) {
                     score++;
 		        }
 	        }
-            
+            // Elemets for 'Restart' button and score
 	        let restart = document.createElement('button');
 	        let showScore = document.createElement('h1');
             
 	        section.appendChild(showScore);
 	        section.appendChild(restart);
-            
+            // Displays 'Restart' button and player Score
 	        showScore.innerText = `Your total points: ${score}/${num}!`;
 	        restart.innerHTML = "<a href='index.html'>Restart</a>";
             
-            console.log(score);
+            // console.log(score);
         }
             
     });
 });
-
-
-//                     newDiv.classList.add('div');
-//                     countriesLi.append.innerText(Object.keys(results));
-//                     answers.forEach(element => {
-//                         regionsLi.append.innerText(element);
-//                     }); 
-                        
-        
-// 		}
-// });
-// // console.log(answers);
-// // complaints.innerHTML = ''
-
-//     //     res.forEach((complaint) => {
-//     //         let li = document.createElement('li')
-//     //         let span = document.createElement('span')
-//     //         let button = document.createElement('button')
-//     //         let p = document.createElement('p')
-//     //         let div = document.createElement('div')

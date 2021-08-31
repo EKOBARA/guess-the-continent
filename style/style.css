@@ -21,6 +21,10 @@ h1 {
     font-family: 'Orbitron', sans-serif;
 }
 
+h2 {
+    margin-top: 5px;
+}
+
 a {
     color: rgb(255, 250, 250);
     text-decoration: none;
@@ -38,7 +42,7 @@ section {
 .container {
     display: flex;
     flex-direction: column;
-`    align-items: center;
+    align-items: center;
     flex-wrap: nowrap;
 }
 .modal-buttons {
@@ -58,30 +62,49 @@ section {
 }
 
 #modal {
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(59, 13, 13, 0.4);
+    background: rgba(70, 100, 51, 0.68);
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
 	overflow: auto;
-	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+	
 	display: none;
 }
 
 #modal-textbox {
-	background-color: white;
-	height: 350px;
+	background-color: rgb(0, 0, 0);
+	height: 365px;
 	width: 550px;
 	border-radius: 2px;
 	margin: 150px auto;
 	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
-	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 6px 6px rgba(223, 205, 205, 0.7);
 	/*This will give the box some depth.*/
 	padding: 2%;
 	line-height: 120%;
+}
+
+.hint {
+    text-align: center;
+}
+#hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+#close {
+    background: rgba(0, 0, 0, 0.68);
+
 }
 
 #modal-footer {

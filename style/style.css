@@ -1,27 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 body {
-	/* background-image: url("https://s-media-cache-ak0.pinimg.com/originals/5c/7a/93/5c7a9388fd4cb59fcbb9fedc5fa12bd3.jpg"); */
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
+	background-image: url("https://wallpapercave.com/wp/wp2293428.jpg");
+    background-size: 180%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+main {
+    min-height: 80vh;
+
 }
 
 h1 {
 	padding-bottom: 15px;
+    font-size: 4.5em;
+    font-family: 'Orbitron', sans-serif;
+}
+
+a {
+    color: rgb(255, 250, 250);
+    text-decoration: none;
+    font-size: 3em;
+    animation-duration: 20s;
+    padding:20px;
+    margin-bottom: 5px;
+    /* background: rgba(71, 90, 105, .5) */
 }
 
 section {
     display: none;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+`    align-items: center;
+    flex-wrap: nowrap;
+}
 .modal-buttons {
 	padding: 14px 18px;
-	background-color: #677996;
+    background: rgba(46, 97, 13, 0.68);
 	border: none;
 	outline: none;
 	border-radius: 3px;
 	color: white;
-	font-family: 'Arial';
 	cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .game-over {

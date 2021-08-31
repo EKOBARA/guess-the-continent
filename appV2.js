@@ -1,6 +1,7 @@
 // Keep track of all asked questions and their answers
-const results = []; // Correct answers
-const answers = []; // Player answers
+const correct = []; // Correct answers
+const player = []; // Player answers
+const countries = []; // Given Countries
 
 /*----- cached element references -----*/
 const form = document.querySelector('form');
@@ -9,6 +10,10 @@ const qNumber = document.querySelector('h3');
 const question = document.querySelector('h5');
 const section = document.querySelector('section');
 const div = document.querySelector('div');
+const results = document.getElementById('results');
+const listCountries = document.querySelector('#countries');
+const listCorrect = document.getElementById('correct');
+const listPlayer = document.getElementById('player');
 
 
 /*----- API -----*/
@@ -25,8 +30,9 @@ function start(){
         let country = Math.floor(Math.random() * 250);
         qNumber.innerText = `Question ${num+=1}`;
         question.innerText = `What region is ${res[country].name} located?`;
-        results.push(res[country].region);
-		answers.push(input.value);
+        correct.push(res[country].region);
+		player.push(input.value);
+        countries.push(res[country].name);
     })
 }
 // Loads game once the webpage loads
@@ -39,35 +45,56 @@ form.addEventListener('submit', (event) => {
     .then((res) => res.json())
     .then((res) => {
         // Max 10 questions
-        if (num != 10){
+        if (num != 3){
             // Selects random cpuntry
             let country = Math.floor(Math.random() * 250); 
                 qNumber.innerText = `Question ${num+=1}`;
                 question.innerText = `What region is ${res[country].name} located?`;
 
                 // logs correct answer and player answer
-                results.push(res[country].region);
-                answers.push(input.value);
+                correct.push(res[country].region);
+                player.push(input.value);
+                countries.push(res[country].name);
                 // console.log(results);
                 // console.log(answers);
                 input.value = ''; // Clears input field
         } 
         else {    // when max questions are given
-            answers.push(input.value);
+            player.push(input.value);
 	        div.style.display = 'none'; // Clears browser
 	        section.style.display = 'block';
 
             // Compares player answer to correct answers 
 	        let score = 0;
-	        for (let i = 0; i < results.length; i++) {
-                if (results[i] === answers[i + 1]) {
+	        for (let i = 0; i < correct.length; i++) {
+                if (correct[i] === player[i + 1]) {
                     score++;
 		        }
 	        }
             // Elemets for 'Restart' button and score
 	        let restart = document.createElement('button');
 	        let showScore = document.createElement('h1');
+            console.log(countries)
             
+            for (let i = 0; i < countries.length; i++) {
+                let li = document.createElement('p');
+                li.classList = 'names';
+                li.innerText = countries[i];
+                listCountries.appendChild(li)
+            }
+            for (let i = 0; i < correct.length; i++) {
+				let li = document.createElement('p');
+				li.innerText = correct[i];
+                li.classList = 'names';
+				listCorrect.appendChild(li);
+			}
+            for (let i = 0; i < player.length; i++) {
+				let li = document.createElement('p');
+				li.innerText = player[i];
+                li.classList = 'names';
+				listPlayer.appendChild(li);
+			}
+
 	        section.appendChild(showScore);
 	        section.appendChild(restart);
             // Displays 'Restart' button and player Score

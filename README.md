@@ -1,5 +1,6 @@
 # Guess The Region
 <br>
+
 ![Game](./style/visuals/app.png)
 
 ## Game Discription
@@ -14,8 +15,6 @@ The questions would be formated where the player is given a country name and is 
 - Javascript
 - HTML
 - CSS
-
----
 
 ---
 ## User Stories
@@ -36,7 +35,7 @@ The questions would be formated where the player is given a country name and is 
 - As a player, I want a hint
 - As a player, I want multiple guesses for each question.
 - As a player, after a game ends, I want a "Play again" button so that I can begin another game.
-- As a player, I want to choose the hopw many questions i want to answer
+- As a player, I want to choose the how many questions i want to answer
 
 
 **Silver**:
@@ -50,13 +49,12 @@ The questions would be formated where the player is given a country name and is 
 - As a player, I want the game to share my wins on social media so everyone can know how good I am.
 - As a player, I want to be able to play the game in the language that I speak, so that I can fully understand the game.
 - As a player, I want I want a picture to be displayed with the country name
-    - A picture of the country
-    - A picture of a famous landmark of in the country
-    - A picture of the geographical location (as a hint)
+- As a player, I want a picture of the country
+- As a player, I want picture of a famous landmark of in the country
+- As a player, I want A picture of the geographical location (as a hint)
 - As a player, I want I want to choose what to guess:
-    - Given flag and must guess country
-    - Given country and must guess capital
-    - Given Multiple choices for guesses 
+- As a player, I want to guess the capital
+- As a player, I want Multiple choices for guesses 
 
 ## Wireframes
 

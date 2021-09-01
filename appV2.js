@@ -97,7 +97,7 @@ form.addEventListener('submit', (event) => {
 	        section.appendChild(restart);
             // Displays 'Restart' button and player Score
 	        showScore.innerText = `${score}/${num}`;
-	        restart.innerHTML = "<a href='index.html'>Play Again</a>";
+	        restart.innerHTML = "<a href='index.html'>PLAY AGAIN</a>";
             restart.classList = "submit again";
         }
             

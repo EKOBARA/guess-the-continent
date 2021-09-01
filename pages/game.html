@@ -15,7 +15,15 @@
             <h3></h3>
             <h5></h5>
             <form>
-                <input type="text" placeholder="Answer">
+                <!-- <input type="text" placeholder="Answer"> -->
+                <input type="text" list="regions">
+                <datalist id="regions">
+                    <option value="Africa"></option>
+                    <option value="Asia"></option>
+                    <option value="Americas"></option>
+                    <option value="Oceania"></option>
+                    <option value="Polar"></option>
+                </datalist>
                 <button class="submit">Submit</button>
             </form>
 
@@ -24,16 +32,16 @@
     </div>
     <!-- Game over screen -->
     <section>
-        <h1 class="title">Game Over!</h1>
+        <h1 class="title">GAME OVER!</h1>
         <div id="results">
             <ul class="ul" id="countries">
-                <h2 class='heading'>Countries</h2>
+                <h2 class='heading'>COUNTRIES</h2>
             </ul>
             <ul class="ul" id="correct">
-                <h2 class='heading'>Regions</h2>
+                <h1 class='heading'>ANSWERS</h1>
             </ul>
             <ul class="ul" id="player">
-                <h2 class='heading'>Answer</h2>
+                <h2 class='heading'>PLAYER</h2>
             </ul>
         </div>
     </section>

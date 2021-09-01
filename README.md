@@ -1,27 +1,21 @@
-# Guess The Continent
+# Guess The Region
 <br>
-## Project Choice
+![Game](./style/visuals/app.png)
 
-- [ ] Flash Cards
-- [X] Trivia (Self-scoring)
-- [ ] Spaceman
-- [ ] Tower of Hanoi
-- [ ] Simon
+## Game Discription
 
-## Project Discription
+This is a geography trivia game. You will be promped a question and expected to give an input. The gave will go on for a set amount of questions and then will output your total score and a list of the questions and their correct responces letting the user know which ones they answered correctly.
 
-I am going to buid a geography trivia game. You will be promped a question and expected to give an input. The gave will go on for a set amount of questions and then will output your total score and a list of the questions and their correct responces letting the user know which ones they answered correctly.
-
-The questions would be formated where the player is given a country name and is then prompted to give the continent that said country is located on.
+The questions would be formated where the player is given a country name and is then prompted to give the region that said country is located on.
 
 ---
-## Wireframes
+## Thechnologies
 
-![Main Page](./style/visuals/page1.png)
+- Javascript
+- HTML
+- CSS
 
-![In Game](./style/visuals/page2.png)
-
-![Game Over](./style/visuals/page3.png)
+---
 
 ---
 ## User Stories
@@ -63,3 +57,18 @@ The questions would be formated where the player is given a country name and is 
     - Given flag and must guess country
     - Given country and must guess capital
     - Given Multiple choices for guesses 
+
+## Wireframes
+
+![Main Page](./style/visuals/page1.png)
+
+![In Game](./style/visuals/page2.png)
+
+![Game Over](./style/visuals/page3.png)
+
+---
+## Challenges
+
+While making this game I faced a few hurdles that I had to overcome. One that I did not resolve was displaying multiple choice options. Instead I created a dropdown list. This was only successful because all the questions had the same possible answers and would not have worked otherwise. 
+
+I also struggled with creating the final 'Game Over' screen where the correct answers are compared to the player's responses. I was able to figure it out by using the 'display: none' CSS method and changing it to 'display: flex' when the game was over. One thing I plan on adding is a clear distinction in the questions letting the player know which questions they answered correctly vs incorrectly.

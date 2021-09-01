@@ -188,8 +188,8 @@ h1 {
     font-size: 50px;
 }
 
-h5 {
-    text-align: ;
+#quest {
+    max-width: 100%;
 }
 
 #results {

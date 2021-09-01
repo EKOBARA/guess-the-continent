@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+body {
+	background-image: url('https://wallpapercave.com/wp/wp2293428.jpg');
+	background-size: 180%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #111;
+	color: white;
+	font-family: 'Orbitron', sans-serif;
+}
+
+main {
+	min-height: 80vh;
+}
+
+h1 {
+	padding-bottom: 15px;
+	font-size: 4.5em;
+	font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+h2 {
+	margin-top: 5px;
+    padding: 10px;
+}
+
+h3 {
+	font-size: 30px;
+	margin: 20px;
+	text-align: center;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 600;
+}
+
+h5 {
+	font-size: 20px;
+	margin: 20px;
+	text-align: center;
+	font-weight: 400;
+}
+
+a {
+	color: rgb(255, 250, 250);
+	text-decoration: none;
+	font-size: 3em;
+	animation-duration: 20s;
+	padding: 20px;
+	margin-bottom: 5px;
+	/* background: rgba(71, 90, 105, .5) */
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+input {
+    text-align: center;
+    border-radius: 100px;
+
+}
+section {
+	display: none;
+    flex-direction: column;
+    
+}
+
+.again {
+    padding: 0;
+    
+}
+.ul {
+    padding: 40px;
+}
+
+.names {
+    text-align: center;
+    font-size: 17px;
+}
+
+.container {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: nowrap;
+	height: 0px;
+}
+
+.modal-buttons {
+    padding: 14px 18px;
+	background: rgba(46, 97, 13, 0.68);
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+	cursor: pointer;
+	font-family: 'Orbitron', sans-serif;
+}
+
+.hint {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.game-over {
+    opacity: 1;
+	pointer-events: all;
+}
+
+.heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.submit {
+    padding: 10px 15px;
+    background: rgba(46, 97, 13, 0.68);
+    border: none;
+    margin-left: 10px;
+    outline: olivedrab;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+#modal {
+    background-color: rgba(59, 13, 13, 0.4);
+	background: rgba(70, 100, 51, 0.68);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+    
+	display: none;
+}
+
+#modal-textbox {
+    background-color: rgb(0, 0, 0);
+	height: 374px;
+	width: 550px;
+	border-radius: 2px;
+	margin: 150px auto;
+	box-shadow: 0 6px 6px rgba(223, 205, 205, 0.7);
+	padding: 2%;
+	line-height: 120%;
+}
+
+#hint {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+    padding: 0px;
+	list-style-type: none;
+}
+
+#close {
+    background: rgba(0, 0, 0, 0.68);
+}
+
+#modal-footer {
+    text-align: right;
+}
+
+#quest {
+    height: 365px;
+    width: 550px;
+    background: rgba(1, 17, 29, 0.75);
+}
+
+
+#results {
+    display: flex;
+    justify-content: center;
+	background: rgba(46, 97, 13, 0.68);   
+}
+
+@media (max-width: 600px) {
+h1 {
+    font-size: 50px;
+}
+
+#quest {
+    max-width: 100%;
+}
+
+#results {
+    flex-direction: column;
+}
+#modal-textbox {
+	height: 605px;
+	width: 300px;
+}
+#close {
+    background: rgba(46, 97, 13, 0.68);
+}
+
+}

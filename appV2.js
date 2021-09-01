@@ -29,7 +29,7 @@ function start(){
     .then((res) => {
         let country = Math.floor(Math.random() * 250);
         qNumber.innerText = `Question ${num+=1}`;
-        question.innerText = `What region is ${res[country].name} located?`;
+        question.innerText = `In what region is ${res[country].name} located?`;
         correct.push(res[country].region);
 		player.push(input.value);
         countries.push(res[country].name);
@@ -45,24 +45,23 @@ form.addEventListener('submit', (event) => {
     .then((res) => res.json())
     .then((res) => {
         // Max 10 questions
-        if (num != 3){
+        if (num != 10){
             // Selects random cpuntry
             let country = Math.floor(Math.random() * 250); 
                 qNumber.innerText = `Question ${num+=1}`;
-                question.innerText = `What region is ${res[country].name} located?`;
+                question.innerText = `In what region is ${res[country].name} located?`;
 
                 // logs correct answer and player answer
                 correct.push(res[country].region);
                 player.push(input.value);
                 countries.push(res[country].name);
-                // console.log(results);
-                // console.log(answers);
+                
                 input.value = ''; // Clears input field
         } 
         else {    // when max questions are given
             player.push(input.value);
 	        div.style.display = 'none'; // Clears browser
-	        section.style.display = 'block';
+	        section.style.display = 'flex';
 
             // Compares player answer to correct answers 
 	        let score = 0;
@@ -74,7 +73,7 @@ form.addEventListener('submit', (event) => {
             // Elemets for 'Restart' button and score
 	        let restart = document.createElement('button');
 	        let showScore = document.createElement('h1');
-            console.log(countries)
+            section.appendChild(showScore);
             
             for (let i = 0; i < countries.length; i++) {
                 let li = document.createElement('p');
@@ -95,13 +94,11 @@ form.addEventListener('submit', (event) => {
 				listPlayer.appendChild(li);
 			}
 
-	        section.appendChild(showScore);
 	        section.appendChild(restart);
             // Displays 'Restart' button and player Score
-	        showScore.innerText = `Your total points: ${score}/${num}!`;
-	        restart.innerHTML = "<a href='index.html'>Restart</a>";
-            
-            // console.log(score);
+	        showScore.innerText = `${score}/${num}`;
+	        restart.innerHTML = "<a href='index.html'>Play Again</a>";
+            restart.classList = "submit again";
         }
             
     });

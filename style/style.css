@@ -18,10 +18,12 @@ h1 {
 	padding-bottom: 15px;
 	font-size: 4.5em;
 	font-family: 'Orbitron', sans-serif;
+    text-align: center;
 }
 
 h2 {
 	margin-top: 5px;
+    padding: 10px;
 }
 
 h3 {
@@ -62,7 +64,21 @@ input {
 }
 section {
 	display: none;
+    flex-direction: column;
     
+}
+
+.again {
+    padding: 0;
+    
+}
+.ul {
+    padding: 40px;
+}
+
+.names {
+    text-align: center;
+    font-size: 17px;
 }
 
 .container {
@@ -86,12 +102,31 @@ section {
 
 .hint {
     text-align: center;
+    padding-left: 0px;
 }
 
 .game-over {
     opacity: 1;
 	pointer-events: all;
 }
+
+.heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.submit {
+    padding: 10px 15px;
+    background: rgba(46, 97, 13, 0.68);
+    border: none;
+    margin-left: 10px;
+    outline: olivedrab;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+}
+
 
 #modal {
     background-color: rgba(59, 13, 13, 0.4);
@@ -113,9 +148,7 @@ section {
 	width: 550px;
 	border-radius: 2px;
 	margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
 	box-shadow: 0 6px 6px rgba(223, 205, 205, 0.7);
-	/*This will give the box some depth.*/
 	padding: 2%;
 	line-height: 120%;
 }
@@ -125,10 +158,8 @@ section {
 	flex-direction: column;
 	align-items: center;
 	flex-wrap: wrap;
+    padding: 0px;
 	list-style-type: none;
-	columns: 2;
-	-webkit-columns: 2;
-	-moz-columns: 2;
 }
 
 #close {
@@ -145,14 +176,31 @@ section {
     background: rgba(1, 17, 29, 0.75);
 }
 
-#submit {
-    padding: 10px 15px;
-	background: rgba(46, 97, 13, 0.68);
-	border: none;
-    margin-left: 10px;
-	outline: olivedrab;
-	border-radius: 100px;
-	color: white;
-	cursor: pointer;
-	font-family: 'Orbitron', sans-serif;
+
+#results {
+    display: flex;
+    justify-content: center;
+	background: rgba(46, 97, 13, 0.68);   
+}
+
+@media (max-width: 600px) {
+h1 {
+    font-size: 50px;
+}
+
+h5 {
+    text-align: ;
+}
+
+#results {
+    flex-direction: column;
+}
+#modal-textbox {
+	height: 605px;
+	width: 300px;
+}
+#close {
+    background: rgba(46, 97, 13, 0.68);
+}
+
 }
